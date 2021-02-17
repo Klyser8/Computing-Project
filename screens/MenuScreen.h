@@ -14,6 +14,8 @@ private:
     sf::Texture buttonTexture;
     sf::Sprite buttonSprite;
 
+    sf::Font font;
+
     Button playButton;
 
 public:

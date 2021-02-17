@@ -10,6 +10,9 @@ MenuScreen::MenuScreen(sf::RenderWindow &_window) : Screen(_window, Screen::MENU
     if (!buttonTexture.loadFromFile("assets/button.png")) {
         std::cout << "Could not load button.png!" << std::endl;
     }
+    if (!font.loadFromFile("assets/font/basic-celestial.ttf")) {
+        std::cout << "Could not load basic-celestial.ttf!" << std::endl;
+    }
     bgSprite.setTexture(bgTexture);
     titleSprite.setTexture(titleTexture);
     buttonSprite.setTexture(buttonTexture);
@@ -23,7 +26,7 @@ MenuScreen::MenuScreen(sf::RenderWindow &_window) : Screen(_window, Screen::MENU
                                 (buttonTexture.getSize().x / 2.f * buttonSprite.getScale().x),
                              (window.getSize().y / 2.f) -
                              (buttonTexture.getSize().y / 2.f * buttonSprite.getScale().y));
-    playButton = Button(buttonSprite, "Play");
+    playButton = Button(buttonSprite, "Play", font);
     std::cout << "But X1: " << playButton.getSprite().getPosition().x << "; But Y1: "
               << playButton.getSprite().getPosition().y
               << "\tBut X2: " << playButton.getSprite().getPosition().x

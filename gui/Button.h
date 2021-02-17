@@ -17,13 +17,11 @@ private:
     sf::Sprite hoverSprite;
     sf::Sprite clickSprite;
 
-    sf::Font font;
-
     sf::Text text;
     State state;
 
 public:
-    Button(sf::Sprite normalSprite, std::string text);
+    Button(sf::Sprite normalSprite, std::string text, sf::Font font);
 
     Button();
 

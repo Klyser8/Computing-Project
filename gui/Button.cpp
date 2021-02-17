@@ -1,14 +1,11 @@
 #include "Button.h"
 
-Button::Button(sf::Sprite normalSprite, std::string _str) : normalSprite(normalSprite) {
+Button::Button(sf::Sprite normalSprite, std::string _str, sf::Font font) : normalSprite(normalSprite) {
     state = DEFAULT;
     hoverSprite = normalSprite;
     hoverSprite.setColor(sf::Color::Yellow);
     clickSprite = normalSprite;
     clickSprite.setColor(sf::Color::Black);
-    if (!font.loadFromFile("assets/font/basic-celestial.ttf")) {
-        std::cout << "Could not load basic-celestial.ttf!" << std::endl;
-    }
     text.setFont(font);
     text.setString(_str);
     text.setCharacterSize(24);
